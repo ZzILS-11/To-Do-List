@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do — Главная</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page page--fade-in">
+  <header class="site-header">
+    <nav class="nav" role="navigation" aria-label="Главное меню">
+      <a class="nav__link" href="index.html">Главная</a>
+      <a class="nav__link" href="about.html">О приложении</a>
+      <a class="nav__link" href="contacts.html">Контакты</a>
+    </nav>
+
+    <div class="header-actions">
+      <h1 class="title">Мой To-Do</h1>
+      <button id="themeToggle" class="btn btn--ghost" aria-label="Переключить тему">🌓</button>
+    </div>
+  </header>
+
+  <main class="container grid-layout">
+    <section class="card add-card" aria-labelledby="addTitle">
+      <h2 id="addTitle" class="card__title">Добавить задачу</h2>
+
+      <label class="field">
+        <span class="label">Название</span>
+        <input id="taskTitle" class="input" type="text" placeholder="Введите название задачи" />
+      </label>
+
+      <label class="field">
+        <span class="label">Описание</span>
+        <textarea id="taskDesc" class="textarea" rows="3" placeholder="Описание (необязательно)"></textarea>
+      </label>
+
+      <label class="field">
+        <span class="label">Подзадачи (через запятую)</span>
+        <input id="taskSubs" class="input" type="text" placeholder="пример: купить, собрать, проверить" />
+      </label>
+
+      <div class="form-row actions-row">
+        <div class="left">
+          <button id="addTaskBtn" class="btn btn--primary">Добавить</button>
+          <button id="clearCompleted" class="btn btn--muted">Очистить выполненные</button>
+        </div>
+
+        <div class="right">
+          <label>
+            <select id="filterSelect" class="select">
+              <option value="all">Все</option>
+              <option value="active">Активные</option>
+              <option value="done">Выполненные</option>
+            </select>
+          </label>
+          <span id="taskCounter" class="counter">Задач: 0</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card list-card" aria-labelledby="listTitle">
+      <h2 id="listTitle" class="card__title">Список задач</h2>
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>2025 — To-Do List</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
